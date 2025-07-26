@@ -17,30 +17,27 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-        }
         .accordion-item {
             margin-bottom: 5px;
+            max-width: 300px;
         }
         .accordion-header {
-            background-color: #2c3e50;
+            background-color: #000000;
             color: white;
-            padding: 15px;
+            padding: 10px;
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s;
+            font-size: 14px;
         }
         .accordion-header:hover {
-            background-color: #34495e;
+            background-color: #333333;
         }
         .accordion-content {
             display: none;
             padding: 15px;
             background-color: white;
+            margin-left: 0;
         }
         .active .accordion-content {
             display: block;
@@ -88,8 +85,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Sinestesia</h1>
-<img src="https://github.com/Espaciosinestesia/sinestesia.github.io/blob/main/logo.png.png?raw=true" alt="Logo Sinestesia" style="display: block; margin: 0 auto; max-width: 200px;">            <div class="accordion-item">
+        <img src="https://github.com/Espaciosinestesia/sinestesia.github.io/blob/main/logo.png.png?raw=true" alt="Logo Sinestesia" style="display: block; margin: 0 auto; max-width: 200px;">
+        <div class="accordion">
+            <div class="accordion-item">
                 <div class="accordion-header">¿Qué es Sinestesia?</div>
                 <div class="accordion-content">
                     <p>Sinestesia no es todavía nada más que una idea y un deseo de crear una comunidad de personas que comparta libros, escritura, conocimientos, inquietudes, reflexiones, indignaciones, arte, experiencias, y cualquier intercambio natural entre seres humanos como puede ser cambiar una mesa de madera maciza por el diseño de una página web.</p>
@@ -105,7 +103,6 @@
                     <p>Poco a poco, se pueden integrar otras actividades en función de la gente que vaya viniendo. Si alguien es filosófo o biólogo y quiere darnos una masterclass de algún tema concreto, seguro que será interesante. Todo esto es una fantasía muy grande. De momento empecemos de forma sencilla y veremos en que se convierte. Iremos guiando las sesiones hasta que la gente se suelte y quiera proponer cosas. Cualquier ayuda y propuesta es bienvenida desde ya.</p>
                 </div>
             </div>
-
             <div class="accordion-item">
                 <div class="accordion-header">Manifiesto</div>
                 <div class="accordion-content">
@@ -124,7 +121,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="accordion-item">
                 <div class="accordion-header">Blog de Escritura</div>
                 <div class="accordion-content">
@@ -157,7 +153,7 @@
                             <li><strong>Libro:</strong> El Arte de Amar (Erich Fromm)</li>
                         </ul>
 
-                        <div class="session-description">
+                           <div class="session-description">
                             <p>Este será el único libro que no elijamos entre todos. Hemos pensado un sistema en el que cada uno propone un libro y hacemos una votación (sin poder votar el libro que cada uno ha propuesto). El que más votos tenga puede ser el libro de la siguiente sesión.</p>
                             
                             <p>Si al principio nadie se anima, tendremos opciones para proponer. La cita que abre esta especie de manifesto es de Eric Fromm y por eso es el libro elegido para empezar. Es un libro corto y que aglutina muchas de las preocupaciones e inquietudes han motivado crear sinestesia.</p>
@@ -165,7 +161,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="accordion-item">
                 <div class="accordion-header">Contacto</div>
                 <div class="accordion-content">
