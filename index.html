@@ -16,14 +16,16 @@
             width: 100%;
             max-width: 100%;
             margin: 0 auto;
-            padding: 20px;
+            padding: 20px 20px 80px; /* Más espacio al final */
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .accordion-item {
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             width: 300px;
-            margin-left: auto;
-            margin-right: auto;
+            position: relative;
         }
         .accordion-header {
             background-color: #000000;
@@ -44,9 +46,12 @@
             display: none;
             padding: 30px;
             background-color: white;
-            width: 90%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90vw; /* Usar el ancho de la ventana */
             max-width: 1200px;
-            margin: 20px auto;
+            box-sizing: border-box;
         }
         .accordion-content p {
             text-align: justify;
@@ -54,11 +59,11 @@
             margin: 0 auto 1em;
             line-height: 1.6;
             max-width: 1000px;
-            hyphens: auto;
-            word-break: normal;
         }
         .active .accordion-content {
             display: block;
+            position: absolute;
+            z-index: 1;
         }
         .manifesto-quote {
             font-style: italic;
@@ -76,7 +81,6 @@
         }
         .session-details {
             background-color: #f9f9f9;
-9;
             padding: 20px;
             border-radius: 5px;
             margin: 20px auto;
@@ -109,20 +113,21 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
+            gap: 3px;
+            margin-top: -10px;
         }
         img {
             max-width: 200px;
             width: 100%;
             height: auto;
-            margin: 20px auto;
+            margin: 0 auto 30px;
             display: block;
         }
 
         /* Estilos específicos para móviles */
         @media (max-width: 768px) {
             .container {
-                padding: 10px;
+                padding: 10px 10px 60px;
             }
             .accordion-item {
                 width: 90%;
@@ -148,33 +153,35 @@
         <div class="accordion">
             <div class="accordion-item">
                 <div class="accordion-header">¿QUÉ ES SINESTESIA?</div>
-                <div class=ss="accordion-content">
-                    <p>Sinestesia no es todavía nada más que una idea y un deseo de crear una comunidad de personas que comparta libros, escritura, conocimientos, inquietudes, reflexiones, indignaciones, arte, experiencias, y cualquier intercambio natural entre seres humanos como puede ser cambiar una mesa de madera maciza por el diseño de una página web.</p>
+                <div class="accordion-content">
+                    <div style="width: 100100%; max-width: 1000px; margin: 0 auto;">
+                        <p>Sinestesia no es todavía nada más que una idea y un deseo de crear una comunidad de personas que comparta libros, escritura, conocimientos, inquietudes, reflexiones, indignaciones, arte, experiencias, y cualquier intercambio natural entre seres humanos como puede ser cambiar una mesa de madera maciza por el diseño de una página web.</p>
 
-                    <p>Últimamente resulta más fácil imaginar el fin del mundo que el fin de las guerras, del capitalismo, de la tecnología, del egoísmo, del narcisismo, de la maldad, de Trump, de Elon Musk, de Putin, de Israel, de Rusia, de los incels, de Vox… Parece que todo está perdido, que todo está inventado, que todo está pensado y que solo nos queda montarnos a este tren a toda velocidad y vivir anestesiados. Cada vez más gente fantasea con irse al campo, el nuevo éxodo. Pero no puede ser la única solución. Abandonar la civilización significa rendirse, asumir que nunca vamos a volver a ser seres civilizados.</p>
+                        <p>Últimamente resulta más fácil imaginar el fin del mundo que el fin de las guerras, del capitalismo, de la tecnología, del egoísmo, del narcisismo, de la maldad, de Trump, de Elon Musk, de Putin, de Israel, de Rusia, de los incels, de Vox… Parece que todo está perdido, que todo está inventado, que todo está pensado y que solo nos queda montarnos a este tren a toda velocidad y vivir anestesiados. Cada vez más gente fantasea con irse al campo, el nuevo éxodo. Pero no puede ser la única solución. Abandonar la civilización significa rendirse, asumir que nunca vamos a volver a ser seres civilizados.</p>
 
-                    <p>No sabemos en qué se convertirá esto. Tal vez quedamos dos días y nadie viene y desaparece pronto. Pero ojalá y sea un lugar de gente buena donde pasaran cosas buenas. Un ¡basta ya! Si se puede esparcir el mal con tanta facilidad, ¿por qué no el bien? Sinestesia es realmente algo sencillo, una excusa para quedar con amigos y amigos de nuestros amigos y hablar de la locura de mundo en la que vivimos y dejar de normalizarlo todo. Quejarnos de la vida, sí, pero también tratar de que sea un lugar mejor, en el que valga la pena vivir.</p>
+                        <p>No sabemos en qué se convertirá esto. Tal vez quedamos dos días y nadie viene y desaparece pronto. Pero ojalá y sea un lugar de gente buena donde pasaran cosas buenas. Un ¡basta ya! Si se puede esparcir el mal con tanta facilidad, ¿por qué no el bien? Sinestesia es realmente algo sencillo, una excusa para quedar con amigos y amigos de nuestros amigos y hablar de la locura de mundo en la que vivimos y dejar de normalizarlo todo. Quejarnos de la vida, sí, pero también tratar de que sea un lugar mejor, en el que valga la pena vivir.</p>
 
-                    <p>Sinestesia también nace del hastío de los teléfonos, de las aplicaciones, de las redes sociales, del amor y la amistad virtual. Las sesiones realmente serán lo que queramos y en lo que vayan evolucionando. Los libros serán solo una base para arrancar la tertulia en cada sesión, para romper el hielo. No es un club de lectura únicamente. No se trata de destripar cada libro en una sesión y pasar a otro. Aquí no buscamos la productividad, si no que las cosas vayan más despacio y poder observarnos y hablar con tranquilidad. A medida que vayan avanzando las sesiones, podemos ir recuperando libros que ya hayamos leído en otras y volverlos a comentar y que se vaya creando un entramado orgánico. Sería genial si podemos intentar que las temáticas siguieran algo de orden y no leer cualquier cosa. Pero sobre todo se trata de que decidamos entre todos los miembros qué nos apetece leer, escribir o hacer en la siguiente sesión.</p>
+                        <p>Sinestesia también nace del hastío de los teléfonos, de las aplicaciones, de las redes sociales, del amor y la amistad virtual. Las sesiones realmente serán lo que queramos y en lo que vayan evolucionando. Los libros serán solo una base para arrancar la tertulia en cada sesión, para romper el hielo. No es un club de lectura únicamente. No se trata de destripar cada libro en una sesión y pasar a otro. Aquí no buscamos la productividad, si no que las cosas vayan más despacio y poder observarnos y hablar con tranquilidad. A medida que vayan avanzando las sesiones, podemos ir recuperando libros que ya hayamos leído en otras y volverlos a comentar y que se vaya creando un entramado orgánico. Sería genial si podemos intentar que las temáticas siguieran algo de orden y no leer cualquier cosa. Pero sobre todo se trata de que decidamos entre todos los miembros qué nos apetece leer, escribir o hacer en la siguiente sesión.</p>
 
-                    <p>No se trata de que esto sea una carga, de que haya que estudiar en casa para hacerse el inteligente en este espacio. Podemos combinar la lectura con la escritura y leer los textos en voz alta. A quien le apetezca. Quien no, que solo escuche. No es un concurso, ni es un club de listos, ni de cultos ni de eruditos. Todo el mundo es bienvenido.</p>
+                        <p>No se trata de que esto sea una carga, de que haya que estudiar en casa para hacerse el inteligente en este espacio. Podemos combinar la lectura con la escritura y leer los textos en voz alta. A quien le apetezca. Quien no, que solo escuche. No es un concurso, ni es un club de listos, ni de cultos ni de eruditos. Todo el mundo es bienvenido.</p>
 
-                    <p>Poco a poco, se pueden integrar otras actividades en función de la gente que vaya viniendo. Si alguien es filosófo o biólogo y quiere darnos una masterclass de algún tema concreto, seguro que será interesante. Todo esto es una fantasía muy grande. De momento empecemos de forma sencilla y veremos en que se convierte. Iremos guiando las sesiones hasta que la gente se suelte y quiera proponer cosas. Cualquier ayuda y propuesta es bienvenida desde ya.</p>
+                        <p>Poco a poco, se pueden integrar otras actividades en función de la gente que vaya viniendo. Si alguien es filosófo o biólogo y quiere darnos una masterclass de algún tema concreto, seguro que será interesante. Todo esto es una fantasía muy grande. De momento empecemos de forma sencilla y veremos en que se convierte. Iremos guiando las sesiones hasta que la gente se suelte y quiera proponer cosas. Cualquier ayuda y propuesta es bienvenida desde ya.</p>
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <div class="accordion-header">MANIFIESTO</div>
                 <div class="accordion-content">
-                    <div class="manifesto-quote">
+                    <div class="manifesto-quote" stystyle="width: 100%; max-width: 1000px; margin: 0 auto;">
                         <p>"El capitalismo moderno necesita hombres que cooperen mansamente y en gran número; que quieran consumir cada vez más; y cuyos gustos estén estandarizados y puedan modificarse y anticiparse fácilmente. Necesita hombres que se sientan libres e independientes, no sometidos a ninguna autoridad, principio o conciencia moral, dispuestos, empero, a que los manejen, a hacer lo que se espera de ellos, a encajar sin dificultades en la maquinaria social (...)</p>
 
                         <p>El hombre moderno está enajenado de sí mismo, de sus semejantes y de la naturaleza. Se ha transformado en un artículo, experimenta sus fuerzas vitales como una inversión que debe producirle el máximo de beneficios posible en las condiciones imperantes en el mercado. Las relaciones humanas son esencialmente las de autómatas enajenados, en las que cada uno basa su seguridad en mantenerse cerca del rebaño y en no diferir en el pensamiento, el sentimiento o la acción. Al mismo tiempo que todos tratan de estar tan cerca de los demás como sea posible, todos permanecen tremendamente solos, invadidos por el profundo sentimiento o la acción. (...)</p>
 
                         <p>Nuestra civilización ofrece muchos paliativos que ayudan a la gente a ignorar conscientemente esa soledad: en primer término, la estricta rutina del trabajo burocratizado y mecánico, que ayuda a la gente a no tomar conciencia de sus deseos humanos más fundamentales, del anhelo de trascendencia y unidad. En la medida en que la rutina sola no basta para lograr ese fin, el hombre se sobrepone a su desesperación inconsciente por medio de la rutina de la diversión, la consumición pasiva (...) y, además, por medio de la satisfacción de comprar siempre cosas nuevas y cambiarlas inmediatamente por otras. El hombre moderno está actualmente muy cerca de la imagen que Huxley describe en Un mundo feliz: bien alimentado, bien vestido, sexualmente satisfecho, y no obstante sin yo, sin contacto alguno, salvo el más superficial, con sus semejantes, (...)</p>
 
-                        <p>La felicidad del hombre moderno consiste en "divertirse". Divertirse significa la satisfacción de consumir y asimilar artículos, espectáculos, comidas, be bebidas, cigarrillos, gente, conferencias, libros, películas; todo se consume, se traga. (...) todos succionamos, los eternamente expectantes, los esperanzados y los eternamente desilusionados. Nuestro carácter está equipado para intercambiar y recibir, para traficar y consumir; todo, tanto los objetos materiales, como los espirituales, se convierten en objeto de intercambio y de consumo.</p>
+                        <p>La felicidad del hombre moderno consiste en "divertirse". Divertirse significa la satisfacción de consumir y asimilar artículos, espectáculos, comidas, bebidas, cigarrillos, gente, conferencias, libros, películas; todo se consume, se traga. (...) todos succionamos, los eternamente expectantes, los esperanzados y los eternamente desilusionados. Nuestro carácter está equipado para intercambiar y recibir, para traficar y consumir; todo, tanto los objetos materiales, como los espirituales, se convierten en objeto de intercambio y de consumo.</p>
 
-                        <p>La situación en lo que atañe al amor corresponde, inevitablemente, al carácter social del hombre moderno. Los autómatas no pueden amar, pueden intercambiar su "bagaje de personalidad" y confiar en que la transacción sea equitativa. Una de las expresiones más significativas del amor, y en especial del matrimonio con esa estructura enajenada, es la idea del "equipo". En innumerables artículos sobre el matrimonio feliz, el ideal desdescrito es el de un equipo que funciona sin dificultades. Tal descripción no difiere demasiado de la idea de un empleado que trabaja sin inconvenientes; debe ser "razonablemente independiente", cooperativo, tolerante, y al mismo tiempo ambicioso y agresivo."</p>
+                        <p>La situación en lo que atañe al amor corresponde, inevitablemente, al carácter social del hombre moderno. Los autómatas no pueden amar, pueden intercambiar su "bagaje de personalidad" y confiar en que la transacción sea equitativa. Una de las expresiones más signignificativas del amor, y en especial del matrimonio con esa estructura enajenada, es la idea del "equipo". En innumerables artículos sobre el matrimonio feliz, el ideal descrito es el de un equipo que funciona sin dificultades. Tal descripción no difiere demasiado de la idea de un empleado que trabaja sin inconvenientes; debe ser "razonablemente independiente", cooperativo, tolerante, y al mismo tiempo ambicioso y agresivo."</p>
 
                         <div class="quote-author">— Erich Fromm, <cite>El Arte de Amar</cite>, 1956</div>
                     </div>
@@ -183,39 +190,45 @@
             <div class="accordion-item">
                 <div class="accordion-header">BLOG DE ESCRITURA</div>
                 <div class="accordion-content">
-                    <p>[Próximamente]</p>
+                    <div style="width: 100%; max-width: 1000px; margin: 0 auto;">
+                        <p>[Próximamente]</p>
+                    </div>
                 </div>
             </div>
 
             <div class="accordion-item">
                 <div class="accordion-header">LIBROS</div>
                 <div class="accordion-content">
-                    <p>[Próximamente]</p>
+                    <div style="width: 100%; max-width: 1000px; margin: 0 auto;">
+                        <p>[Próximamente]</p>
+                    </div>
                 </div>
             </div>
 
             <div class="accordion-item">
                 <div class="accordion-header">SESIONES</div>
                 <div class="accordion-content">
-                    <p>De momento nos reuniremos un sábado al mes de 12.00 a 14.00 aproximadamente.</p>
+                    <div style="width: 100%; max-width: 1000px; margin: 0 auto;">
+                        <p>De momento nos reuniremos un sábado al mes de 12.00 a 14.00 aproximadamente.</p>
 
-                    <p>Entre semana las vidas van muy rápido y esto podría convertirse en una obligación que no se disfrute. Los fines de semana hay un riesgo de que la gente prefiera hacer otra cosa, esté de resaca o esté fuera de Madrid pero las sesiones van a ser independientes y se puede ir a sesiones sueltas sin que se vaya a perder ningún hilo.</p>
+                        <p>Entre semana las vidas van muy rápido y esto podría convertirse en una obligación que no se disfrute. Los fines de semana hay un riesgo de que la gente prefiera hacer otra cosa, esté de resaca o esté fuera de Madrid pero las sesiones van a ser independientes y se puede ir a sesiones sueltas sin que se vaya a perder ningún hilo.</p>
 
-                    <p>El lugar de las sesiones es algo aún indeterminado. Irá cambiando. Cafeterías, librerías, parques. Os iremos informando y de nuevo, cualquier sugerencia es bienvenida.</p>
+                        <p>El lugar de las sesiones es algo aún indeterminado. Irá cambiando. Cafeterías, librerías, parques. Os iremos informando y de nuevo, cualquier sugerencia es bienvenida.</p>
 
-                    <div class="session-details">
-                        <h3>Primera Sesión</h3>
-                        <ul class="session-info">
-                            <li><strong>Fecha:</strong> sábado 20 de septiembre</li>
-                            <li><strong>Hora:</strong> 12:00</li>
-                            <li><strong>Lugar:</strong> por determinar en función del núm. de personas (Madrid Centro)</li>
-                            <li><strong>Libro:</strong> El Arte de Amar (Erich Fromm)</li>
-                        </ul>
+                        <div class="session-details">
+                            <h3>Primera Sesión</h3>
+                            <ul class="session-info">
+                                <li><strong>Fecha:</strong> sábado 20 de septiembre</li>li>
+                                <li><strong>Hora:</strong> 12:00</li>
+                                <li><strong>Lugar:</strong> por determinar en función del núm. de personas (Madrid Centro)</li>
+                                <li><strong>Libro:</strong> El Arte de Amar (Erich Fromm)</li>
+                            </ul>
 
-                        <div class="session-description">
-                            <p>Este será el único libro que no elijamos entre todos. Hemos pensado un sistema en el que cada uno propone un libro y hacemos una votación (sin poder votar el libro que cada uno ha propuesto). El que más votos tenga puede ser el libro de la siguiente sesión.</p>
-                            
-                            <p>Si al principio nadie se anima, tendremos opciones para proponer. La cita que abre esta especie de manifiesto es de Erich Fromm y por eso es el libro elegido para empezar. Es un libro corto y que aglutina muchas de las preocupaciones e inquietudes han motivado crear sinestesia.</p>
+                            <div class="session-description">
+                                <p>Este será el único libro que no elijamos entre todos. Hemos pensado un sistema en el que cada uno propone un libro y hacemos una votación (sin poder votar el libro que cada uno ha propuesto). El que más votos tenga puede ser el libro de la siguiente sesión.</p>
+                                
+                                <p>Si al principio nadie se anima, tendremos opciones para proponer. La cita que abre esta especie de manifiesto es de Erich Fromm y por eso es el libro elegido para empezar. Es un libro corto y que aglutina muchas de las preocupaciones e inquietudes han motivado crear sinestesia.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -223,8 +236,10 @@
             <div class="accordion-item">
                 <div class="accordion-header">CONTACTO</div>
                 <div class="accordion-content">
-                    <div class="contact-info">
-                        <p><a href="mailto:espaciosinestessia@gmail.com">espaciosinestessia@gmail.com</a></p>
+                    <div style="width: 100%; max-width: 1000px; margin: 0 auto;">
+                        <div class="contact-info">
+                            <p><a href="mailto:espaciosinestessia@gmail.com">espaciosinestessia@gmail.com</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -245,6 +260,20 @@
 
                 // Alternar el estado del elemento actual
                 accordionItem.classList.toggle('active');
+
+                // Ajustar el espacio después del elemento activo
+                const allItems = document.querySelectorAll('.accordion-item');
+                allItems.forEach((item, index) => {
+                    if (item === accordionItem && item.classList.contains('active')) {
+                        const contentHeight = item.querySelector('.accordion-content').scrollHeight;
+                        const nextItems = Array.from(allItems).slice(index + 1);
+                        nextItems.forEach(nextItem => {
+                            nextItem.style.marginTop = `${contentHeight + 20}px`;
+                        });
+                    } else if (!document.querySelector('.accordion-item.active')) {
+                        item.style.marginTop = '3px';
+                    }
+                });
             });
         });
     </script>
