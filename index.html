@@ -16,7 +16,7 @@
             width: 100%;
             max-width: 100%;
             margin: 0 auto;
-            padding: 20px 20px 80px; /* Más espacio al final */
+            padding: 20px 20px 80px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -49,7 +49,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 90vw; /* Usar el ancho de la ventana */
+            width: 90vw;
             max-width: 1200px;
             box-sizing: border-box;
         }
@@ -99,11 +99,15 @@
         .contact-info {
             text-align: center;
             padding: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
         .contact-info a {
             color: #2c3e50;
             text-decoration: none;
             font-size: 1.1em;
+            margin: 0 auto;
         }
         .contact-info a:hover {
             text-decoration: underline;
@@ -135,13 +139,24 @@
             .accordion-content {
                 width: 100%;
                 padding: 15px;
-                font-size: 14px;
+                position: static;
+                transform: none;
+                left: auto;
             }
             .accordion-content p {
                 font-size: 14px;
+                padding: 0 10px;
+            }
+            .accordion-content > div {
+                width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
             }
             img {
                 max-width: 150px;
+            }
+            .active .accordion-content {
+                position: static;
             }
         }
     </style>
@@ -154,7 +169,7 @@
             <div class="accordion-item">
                 <div class="accordion-header">¿QUÉ ES SINESTESIA?</div>
                 <div class="accordion-content">
-                    <div style="width: 100100%; max-width: 1000px; margin: 0 auto;">
+                    <div style="width: 100%; max-width: 1000px; margin: 0 auto;">
                         <p>Sinestesia no es todavía nada más que una idea y un deseo de crear una comunidad de personas que comparta libros, escritura, conocimientos, inquietudes, reflexiones, indignaciones, arte, experiencias, y cualquier intercambio natural entre seres humanos como puede ser cambiar una mesa de madera maciza por el diseño de una página web.</p>
 
                         <p>Últimamente resulta más fácil imaginar el fin del mundo que el fin de las guerras, del capitalismo, de la tecnología, del egoísmo, del narcisismo, de la maldad, de Trump, de Elon Musk, de Putin, de Israel, de Rusia, de los incels, de Vox… Parece que todo está perdido, que todo está inventado, que todo está pensado y que solo nos queda montarnos a este tren a toda velocidad y vivir anestesiados. Cada vez más gente fantasea con irse al campo, el nuevo éxodo. Pero no puede ser la única solución. Abandonar la civilización significa rendirse, asumir que nunca vamos a volver a ser seres civilizados.</p>
@@ -172,7 +187,7 @@
             <div class="accordion-item">
                 <div class="accordion-header">MANIFIESTO</div>
                 <div class="accordion-content">
-                    <div class="manifesto-quote" stystyle="width: 100%; max-width: 1000px; margin: 0 auto;">
+                    <div class="manifesto-quote" style="width: 100%; max-width: 1000px; margin: 0 auto;">
                         <p>"El capitalismo moderno necesita hombres que cooperen mansamente y en gran número; que quieran consumir cada vez más; y cuyos gustos estén estandarizados y puedan modificarse y anticiparse fácilmente. Necesita hombres que se sientan libres e independientes, no sometidos a ninguna autoridad, principio o conciencia moral, dispuestos, empero, a que los manejen, a hacer lo que se espera de ellos, a encajar sin dificultades en la maquinaria social (...)</p>
 
                         <p>El hombre moderno está enajenado de sí mismo, de sus semejantes y de la naturaleza. Se ha transformado en un artículo, experimenta sus fuerzas vitales como una inversión que debe producirle el máximo de beneficios posible en las condiciones imperantes en el mercado. Las relaciones humanas son esencialmente las de autómatas enajenados, en las que cada uno basa su seguridad en mantenerse cerca del rebaño y en no diferir en el pensamiento, el sentimiento o la acción. Al mismo tiempo que todos tratan de estar tan cerca de los demás como sea posible, todos permanecen tremendamente solos, invadidos por el profundo sentimiento o la acción. (...)</p>
@@ -181,7 +196,7 @@
 
                         <p>La felicidad del hombre moderno consiste en "divertirse". Divertirse significa la satisfacción de consumir y asimilar artículos, espectáculos, comidas, bebidas, cigarrillos, gente, conferencias, libros, películas; todo se consume, se traga. (...) todos succionamos, los eternamente expectantes, los esperanzados y los eternamente desilusionados. Nuestro carácter está equipado para intercambiar y recibir, para traficar y consumir; todo, tanto los objetos materiales, como los espirituales, se convierten en objeto de intercambio y de consumo.</p>
 
-                        <p>La situación en lo que atañe al amor corresponde, inevitablemente, al carácter social del hombre moderno. Los autómatas no pueden amar, pueden intercambiar su "bagaje de personalidad" y confiar en que la transacción sea equitativa. Una de las expresiones más signignificativas del amor, y en especial del matrimonio con esa estructura enajenada, es la idea del "equipo". En innumerables artículos sobre el matrimonio feliz, el ideal descrito es el de un equipo que funciona sin dificultades. Tal descripción no difiere demasiado de la idea de un empleado que trabaja sin inconvenientes; debe ser "razonablemente independiente", cooperativo, tolerante, y al mismo tiempo ambicioso y agresivo."</p>
+                        <p>La situación en lo que atañe al amor corresponde, inevitablemente, al carácter social del hombre moderno. Los autómatas no pueden amar, pueden intercambiar su "bagaje de personalidad" y confiar en que la transacción sea equitativa. Una de las expresiones más significativas del amor, y en especial del matrimonio con esa estructura enajenada, es la idea del "equipo". En innumerables artículos sobre el matrimonio feliz, el ideal descrito es el de un equipo que funciona sin dificultades. Tal descripción no difiere demasiado de la idea de un empleado que trabaja sin inconvenientes; debe ser "razonablemente independiente", cooperativo, tolerante, y al mismo tiempo ambicioso y agresivo."</p>
 
                         <div class="quote-author">— Erich Fromm, <cite>El Arte de Amar</cite>, 1956</div>
                     </div>
@@ -218,7 +233,7 @@
                         <div class="session-details">
                             <h3>Primera Sesión</h3>
                             <ul class="session-info">
-                                <li><strong>Fecha:</strong> sábado 20 de septiembre</li>li>
+                                <li><strong>Fecha:</strong> sábado 20 de septiembre</li>
                                 <li><strong>Hora:</strong> 12:00</li>
                                 <li><strong>Lugar:</strong> por determinar en función del núm. de personas (Madrid Centro)</li>
                                 <li><strong>Libro:</strong> El Arte de Amar (Erich Fromm)</li>
@@ -236,7 +251,7 @@
             <div class="accordion-item">
                 <div class="accordion-header">CONTACTO</div>
                 <div class="accordion-content">
-                    <div style="width: 100%; max-width: 1000px; margin: 0 auto;">
+                    <div style="width: 100%; max-width: 1000px; margin: 0 auto; text-align: center;">
                         <div class="contact-info">
                             <p><a href="mailto:espaciosinestessia@gmail.com">espaciosinestessia@gmail.com</a></p>
                         </div>
