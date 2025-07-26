@@ -11,21 +11,19 @@
             margin: 0;
             padding: 0;
             background-color: white;
-            overflow-x: hidden;
         }
         .container {
             width: 100%;
+            max-width: 100%;
             margin: 0 auto;
             padding: 20px;
             box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
         .accordion-item {
             margin-bottom: 5px;
             width: 300px;
-            position: relative;
+            margin-left: auto;
+            margin-right: auto;
         }
         .accordion-header {
             background-color: #000000;
@@ -46,13 +44,9 @@
             display: none;
             padding: 30px;
             background-color: white;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90vw;
+            width: 90%;
             max-width: 1200px;
-            box-sizing: border-box;
-            margin-top: 10px;
+            margin: 20px auto;
         }
         .accordion-content p {
             text-align: justify;
@@ -82,6 +76,7 @@
         }
         .session-details {
             background-color: #f9f9f9;
+9;
             padding: 20px;
             border-radius: 5px;
             margin: 20px auto;
@@ -115,12 +110,6 @@
             flex-direction: column;
             align-items: center;
             gap: 5px;
-        }
-        .accordion-item.active + .accordion-item {
-            margin-top: calc(100% + 20px);
-        }
-        .accordion-item.active.empty + .accordion-item {
-            margin-top: 50px;
         }
         img {
             max-width: 200px;
@@ -159,7 +148,7 @@
         <div class="accordion">
             <div class="accordion-item">
                 <div class="accordion-header">¿QUÉ ES SINESTESIA?</div>
-                <div class="accordion-content">
+                <div class=ss="accordion-content">
                     <p>Sinestesia no es todavía nada más que una idea y un deseo de crear una comunidad de personas que comparta libros, escritura, conocimientos, inquietudes, reflexiones, indignaciones, arte, experiencias, y cualquier intercambio natural entre seres humanos como puede ser cambiar una mesa de madera maciza por el diseño de una página web.</p>
 
                     <p>Últimamente resulta más fácil imaginar el fin del mundo que el fin de las guerras, del capitalismo, de la tecnología, del egoísmo, del narcisismo, de la maldad, de Trump, de Elon Musk, de Putin, de Israel, de Rusia, de los incels, de Vox… Parece que todo está perdido, que todo está inventado, que todo está pensado y que solo nos queda montarnos a este tren a toda velocidad y vivir anestesiados. Cada vez más gente fantasea con irse al campo, el nuevo éxodo. Pero no puede ser la única solución. Abandonar la civilización significa rendirse, asumir que nunca vamos a volver a ser seres civilizados.</p>
@@ -183,22 +172,22 @@
 
                         <p>Nuestra civilización ofrece muchos paliativos que ayudan a la gente a ignorar conscientemente esa soledad: en primer término, la estricta rutina del trabajo burocratizado y mecánico, que ayuda a la gente a no tomar conciencia de sus deseos humanos más fundamentales, del anhelo de trascendencia y unidad. En la medida en que la rutina sola no basta para lograr ese fin, el hombre se sobrepone a su desesperación inconsciente por medio de la rutina de la diversión, la consumición pasiva (...) y, además, por medio de la satisfacción de comprar siempre cosas nuevas y cambiarlas inmediatamente por otras. El hombre moderno está actualmente muy cerca de la imagen que Huxley describe en Un mundo feliz: bien alimentado, bien vestido, sexualmente satisfecho, y no obstante sin yo, sin contacto alguno, salvo el más superficial, con sus semejantes, (...)</p>
 
-                        <p>La felicidad del hombre moderno consiste en "divertirse". Divertirse significa la satisfacción de consumir y asimilar artículos, espectáculos, comidas, bebidas, cigarrillos, gente, conferencias, libros, películas; todo se consume, se traga. (...) todos succionamos, los eternamente expectantes, los esperanzados y los eternamente desilusionados. Nuestro carácter está equipado para intercambiar y recibir, para traficar y consumir; todo, tanto los objetos materiales, como los espirituales, se convierten en objeto de intercambio y de consumo.</p>
+                        <p>La felicidad del hombre moderno consiste en "divertirse". Divertirse significa la satisfacción de consumir y asimilar artículos, espectáculos, comidas, be bebidas, cigarrillos, gente, conferencias, libros, películas; todo se consume, se traga. (...) todos succionamos, los eternamente expectantes, los esperanzados y los eternamente desilusionados. Nuestro carácter está equipado para intercambiar y recibir, para traficar y consumir; todo, tanto los objetos materiales, como los espirituales, se convierten en objeto de intercambio y de consumo.</p>
 
-                        <p>La situación en lo que atañe al amor corresponde, inevitablemente, al carácter social del hombre moderno. Los autómatas no pueden amar, pueden intercambiar su "bagaje de personalidad" y confiar en que la transacción sea equitativa. Una de las expresiones más significativas del amor, y en especial del matrimonio con esa estructura enajenada, es la idea del "equipo". En innumerables artículos sobre el matrimonio feliz, el ideal descrito es el de un equipo que funciona sin dificultades. Tal descripción no difiere demasiado de la idea de un empleado que trabaja sin inconvenientes; debe ser "razonablemente independiente", cooperativo, tolerante, y al mismo tiempo ambicioso y agresivo."</p>
+                        <p>La situación en lo que atañe al amor corresponde, inevitablemente, al carácter social del hombre moderno. Los autómatas no pueden amar, pueden intercambiar su "bagaje de personalidad" y confiar en que la transacción sea equitativa. Una de las expresiones más significativas del amor, y en especial del matrimonio con esa estructura enajenada, es la idea del "equipo". En innumerables artículos sobre el matrimonio feliz, el ideal desdescrito es el de un equipo que funciona sin dificultades. Tal descripción no difiere demasiado de la idea de un empleado que trabaja sin inconvenientes; debe ser "razonablemente independiente", cooperativo, tolerante, y al mismo tiempo ambicioso y agresivo."</p>
 
                         <div class="quote-author">— Erich Fromm, <cite>El Arte de Amar</cite>, 1956</div>
                     </div>
                 </div>
             </div>
-            <div class="accordion-item empty">
+            <div class="accordion-item">
                 <div class="accordion-header">BLOG DE ESCRITURA</div>
                 <div class="accordion-content">
                     <p>[Próximamente]</p>
                 </div>
             </div>
 
-            <div class="accordion-item empty">
+            <div class="accordion-item">
                 <div class="accordion-header">LIBROS</div>
                 <div class="accordion-content">
                     <p>[Próximamente]</p>
@@ -231,7 +220,7 @@
                     </div>
                 </div>
             </div>
-            <div class="accordion-item empty">
+            <div class="accordion-item">
                 <div class="accordion-header">CONTACTO</div>
                 <div class="accordion-content">
                     <div class="contact-info">
@@ -246,31 +235,16 @@
         document.querySelectorAll('.accordion-header').forEach(button => {
             button.addEventListener('click', () => {
                 const accordionItem = button.parentElement;
-                const contentHeight = accordionItem.querySelector('.accordion-content').scrollHeight;
                 
                 // Cerrar todos los elementos abiertos
                 document.querySelectorAll('.accordion-item').forEach(item => {
                     if (item !== accordionItem) {
                         item.classList.remove('active');
-                        item.style.marginTop = '5px';
                     }
                 });
 
                 // Alternar el estado del elemento actual
                 accordionItem.classList.toggle('active');
-
-                // Calcular y aplicar márgenes para los elementos siguientes
-                const nextItems = Array.from(accordionItem.parentElement.children);
-                const currentIndex = nextItems.indexOf(accordionItem);
-                
-                nextItems.slice(currentIndex + 1).forEach(item => {
-                    if (accordionItem.classList.contains('active')) {
-                        const spacing = accordionItem.classList.contains('empty') ? '50px' : `${contentHeight + 20}px`;
-                        item.style.marginTop = spacing;
-                    } else {
-                        item.style.marginTop = '5px';
-                    }
-                });
             });
         });
     </script>
