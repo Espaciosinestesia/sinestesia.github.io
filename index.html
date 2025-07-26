@@ -4,8 +4,10 @@
     <title>Sinestesia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Bookman Old Style', 'Libre Baskerville', serif;
             margin: 0;
             padding: 0;
             background-color: white;
@@ -33,6 +35,7 @@
             font-size: 14px;
             text-align: center;
             font-weight: bold;
+            font-family: 'Bookman Old Style', 'Libre Baskerville', serif;
         }
         .accordion-header:hover {
             background-color: #333333;
@@ -41,12 +44,19 @@
             display: none;
             padding: 15px;
             background-color: white;
-            text-align: center;
             width: 100%;
             max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
             box-sizing: border-box;
+        }
+        .accordion-content p {
+            text-align: justify;
+            font-size: 16px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
         }
         .active .accordion-content {
             display: block;
@@ -57,7 +67,7 @@
             border-left: 4px solid #2c3e50;
             margin: 20px 0;
             background-color: #f9f9f9;
-            text-align: center;
+            text-align: justify;
         }
         .quote-author {
             text-align: right;
@@ -69,7 +79,7 @@
             background-color: #f9f9f9;
             padding: 20px;
             border-radius: 5px;
-            margin-top: 15px;
+               margin-top: 15px;
             text-align: center;
         }
         .session-info {
@@ -98,12 +108,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-        .accordion-content p {
-            font-size: 16px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
         }
         img {
             max-width: 200px;
@@ -167,7 +171,7 @@
 
                         <p>La felicidad del hombre moderno consiste en "divertirse". Divertirse significa la satisfacción de consumir y asimilar artículos, espectáculos, comidas, bebidas, cigarrillos, gente, conferencias, libros, películas; todo se consume, se traga. (...) todos succionamos, los eternamente expectantes, los esperanzados y los eternamente desilusionados. Nuestro carácter está equipado para intercambiar y recibir, para traficar y consumir; todo, tanto los objetos materiales, como los espirituales, se convierten en objeto de intercambio y de consumo.</p>
 
-                        <p>La situación en lo que atañe al amor corresponde, inevitablemente, al carácter social del hombre moderno. Los autómatas no pueden amar, pueden intercambiar su "bagaje de personalidad" y confiar en que la transacción sea equitativa. Una de las expresiones más significativas del amor, y en especial del matrimonio con esa estructura enajenada, es la idea del "equipo". En innumerables artículos sobre el matrimonio feliz, el ideal descrito es el de un equipo que funciona sin dificultades. Tal descripción no difiere demasiado de la idea de un empleado que trabaja sin inconvenientes; debe ser "razonablemente independiente", cooperativo, tolerante, y al mismo tiempo ambicioso y agresivo."</p>
+                        <p>La situación en lo que atañe al amor corresponde, inevitablemente, al carácter social del hombre moderno. Los autómatas no pueden amar, pueden intercambiar su "bagaje de personalidad" y confiar en que la transacción sea equitativa. Una de las expresiones más significativas del amor, y en especial dl del matrimonio con esa estructura enajenada, es la idea del "equipo". En innumerables artículos sobre el matrimonio feliz, el ideal descrito es el de un equipo que funciona sin dificultades. Tal descripción no difiere demasiado de la idea de un empleado que trabaja sin inconvenientes; debe ser "razonablemente independiente", cooperativo, tolerante, y al mismo tiempo ambicioso y agresivo."</p>
 
                         <div class="quote-author">— Erich Fromm, <cite>El Arte de Amar</cite>, 1956</div>
                     </div>
@@ -217,7 +221,7 @@
                 <div class="accordion-header">CONTACTO</div>
                 <div class="accordion-content">
                     <div class="contact-info">
-                        <p><a href="mailto:espaciosinestesia@gmail.com">espaciosinestessia@gmail.com</a></p>
+                        <p><a href="mailto:espaciosinestesia@gmail.com">espaciosinestesia@gmail.com</a></p>
                     </div>
                 </div>
             </div>
