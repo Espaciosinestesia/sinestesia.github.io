@@ -24,7 +24,6 @@
             width: 300px;
             margin-left: auto;
             margin-right: auto;
-            position: relative;
         }
         .accordion-header {
             background-color: #000000;
@@ -45,11 +44,9 @@
             display: none;
             padding: 30px;
             background-color: white;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
             width: 90vw;
             max-width: 1200px;
+            margin: 0 auto;
             box-sizing: border-box;
         }
         .accordion-content p {
@@ -58,16 +55,16 @@
             margin: 0 auto 1em;
             line-height: 1.6;
             max-width: 1000px;
+            hyphens: auto;
+            word-break: normal;
         }
         .active .accordion-content {
             display: block;
-            position: absolute;
-            z-index: 1;
+            margin-bottom: 20px;
         }
         .manifesto-quote {
             font-style: italic;
             padding: 20px;
-            border-left: 4px solid #2c3e50;
             margin: 20px auto;
             background-color: #f9f9f9;
             text-align: justify;
@@ -113,7 +110,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
+            gap: 5px;
+        }
+        .accordion-item.active + .accordion-item {
+            margin-top: 300px;
         }
         img {
             max-width: 200px;
@@ -142,6 +142,9 @@
             img {
                 max-width: 150px;
             }
+            .accordion-item.active + .accordion-item {
+                margin-top: 400px;
+            }
         }
     </style>
 </head>
@@ -163,7 +166,7 @@
 
                     <p>No se trata de que esto sea una carga, de que haya que estudiar en casa para hacerse el inteligente en este espacio. Podemos combinar la lectura con la escritura y leer los textos en voz alta. A quien le apetezca. Quien no, que solo escuche. No es un concurso, ni es un club de listos, ni de cultos ni de eruditos. Todo el mundo es bienvenido.</p>
 
-                    <p>Poco a poco, se pueden integrar otras actividades en función de la gente que vaya viniendo. Si alguien es filosófo o biólogo y quiere darnos una masterclass de algún tema concreto, seguro que será interesante. Todo esto es una fantasía muy grande. De momento empecemos de forma sencilla y veremos en que se convierte. Iremos guiando las sesiones hasta que la gente se suelte y quiera proponer cosas. Cualquier ayuda y propuesta es bienvenida desde ya.</p>
+                    <p>Poco a poco, se pueden integrar otras actividades en función de la gente que vaya viniendo. Si alguien es filosófo o biólogo y quiere darnos una masterclass de algún tema concreto, seguro que será interesante. Todo esto es una fantasía muy grande. De momento empecpecemos de forma sencilla y veremos en que se convierte. Iremos guiando las sesiones hasta que la gente se suelte y quiera proponer cosas. Cualquier ayuda y propuesta es bienvenida desde ya.</p>
                 </div>
             </div>
             <div class="accordion-item">
@@ -228,7 +231,7 @@
                 <div class="accordion-header">CONTACTO</div>
                 <div class="accordion-content">
                     <div class="contact-info">
-                        <p><a href="mailto:espaciosinestessia@gmail.com">espaciosinestesia@gmail.com</a></p>
+                        <p><a href="mailto:espaciosinestessia@gmail.com">espaciosinestessia@gmail.com</a></p>
                     </div>
                 </div>
             </div>
@@ -249,6 +252,18 @@
 
                 // Alternar el estado del elemento actual
                 accordionItem.classList.toggle('active');
+
+                // Ajustar el margen de los elementos siguientes
+                const nextItems = accordionItem.parentElement.querySelectorAll('.accordion-item');
+                let encontradoActivo = false;
+                nextItems.forEach(item => {
+                    if (encontradoActivo) {
+                        item.style.marginTop = accordionItem.classList.contains('active') ? '300px' : '5px';
+                    }
+                    if (item === accordionItem) {
+                        encontradoActivo = true;
+                    }
+                });
             });
         });
     </script>
