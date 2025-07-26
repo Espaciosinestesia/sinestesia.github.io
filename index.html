@@ -11,19 +11,21 @@
             margin: 0;
             padding: 0;
             background-color: white;
+            overflow-x: hidden;
         }
         .container {
             width: 100%;
-            max-width: 100%;
             margin: 0 auto;
             padding: 20px;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .accordion-item {
             margin-bottom: 5px;
             width: 300px;
-            margin-left: auto;
-            margin-right: auto;
+            position: relative;
         }
         .accordion-header {
             background-color: #000000;
@@ -44,10 +46,13 @@
             display: none;
             padding: 30px;
             background-color: white;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             width: 90vw;
             max-width: 1200px;
-            margin: 0 auto;
             box-sizing: border-box;
+            margin-top: 10px;
         }
         .accordion-content p {
             text-align: justify;
@@ -60,7 +65,6 @@
         }
         .active .accordion-content {
             display: block;
-            margin-bottom: 20px;
         }
         .manifesto-quote {
             font-style: italic;
@@ -113,7 +117,10 @@
             gap: 5px;
         }
         .accordion-item.active + .accordion-item {
-            margin-top: 300px;
+            margin-top: calc(100% + 20px);
+        }
+        .accordion-item.active.empty + .accordion-item {
+            margin-top: 50px;
         }
         img {
             max-width: 200px;
@@ -142,9 +149,6 @@
             img {
                 max-width: 150px;
             }
-            .accordion-item.active + .accordion-item {
-                margin-top: 400px;
-            }
         }
     </style>
 </head>
@@ -166,7 +170,7 @@
 
                     <p>No se trata de que esto sea una carga, de que haya que estudiar en casa para hacerse el inteligente en este espacio. Podemos combinar la lectura con la escritura y leer los textos en voz alta. A quien le apetezca. Quien no, que solo escuche. No es un concurso, ni es un club de listos, ni de cultos ni de eruditos. Todo el mundo es bienvenido.</p>
 
-                    <p>Poco a poco, se pueden integrar otras actividades en función de la gente que vaya viniendo. Si alguien es filosófo o biólogo y quiere darnos una masterclass de algún tema concreto, seguro que será interesante. Todo esto es una fantasía muy grande. De momento empecpecemos de forma sencilla y veremos en que se convierte. Iremos guiando las sesiones hasta que la gente se suelte y quiera proponer cosas. Cualquier ayuda y propuesta es bienvenida desde ya.</p>
+                    <p>Poco a poco, se pueden integrar otras actividades en función de la gente que vaya viniendo. Si alguien es filosófo o biólogo y quiere darnos una masterclass de algún tema concreto, seguro que será interesante. Todo esto es una fantasía muy grande. De momento empecemos de forma sencilla y veremos en que se convierte. Iremos guiando las sesiones hasta que la gente se suelte y quiera proponer cosas. Cualquier ayuda y propuesta es bienvenida desde ya.</p>
                 </div>
             </div>
             <div class="accordion-item">
@@ -187,14 +191,14 @@
                     </div>
                 </div>
             </div>
-            <div class="accordion-item">
+            <div class="accordion-item empty">
                 <div class="accordion-header">BLOG DE ESCRITURA</div>
                 <div class="accordion-content">
                     <p>[Próximamente]</p>
                 </div>
             </div>
 
-            <div class="accordion-item">
+            <div class="accordion-item empty">
                 <div class="accordion-header">LIBROS</div>
                 <div class="accordion-content">
                     <p>[Próximamente]</p>
@@ -227,7 +231,7 @@
                     </div>
                 </div>
             </div>
-            <div class="accordion-item">
+            <div class="accordion-item empty">
                 <div class="accordion-header">CONTACTO</div>
                 <div class="accordion-content">
                     <div class="contact-info">
@@ -242,26 +246,29 @@
         document.querySelectorAll('.accordion-header').forEach(button => {
             button.addEventListener('click', () => {
                 const accordionItem = button.parentElement;
+                const contentHeight = accordionItem.querySelector('.accordion-content').scrollHeight;
                 
                 // Cerrar todos los elementos abiertos
                 document.querySelectorAll('.accordion-item').forEach(item => {
                     if (item !== accordionItem) {
                         item.classList.remove('active');
+                        item.style.marginTop = '5px';
                     }
                 });
 
                 // Alternar el estado del elemento actual
                 accordionItem.classList.toggle('active');
 
-                // Ajustar el margen de los elementos siguientes
-                const nextItems = accordionItem.parentElement.querySelectorAll('.accordion-item');
-                let encontradoActivo = false;
-                nextItems.forEach(item => {
-                    if (encontradoActivo) {
-                        item.style.marginTop = accordionItem.classList.contains('active') ? '300px' : '5px';
-                    }
-                    if (item === accordionItem) {
-                        encontradoActivo = true;
+                // Calcular y aplicar márgenes para los elementos siguientes
+                const nextItems = Array.from(accordionItem.parentElement.children);
+                const currentIndex = nextItems.indexOf(accordionItem);
+                
+                nextItems.slice(currentIndex + 1).forEach(item => {
+                    if (accordionItem.classList.contains('active')) {
+                        const spacing = accordionItem.classList.contains('empty') ? '50px' : `${contentHeight + 20}px`;
+                        item.style.marginTop = spacing;
+                    } else {
+                        item.style.marginTop = '5px';
                     }
                 });
             });
