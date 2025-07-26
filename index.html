@@ -14,7 +14,7 @@
         }
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 20px;
             box-sizing: border-box;
@@ -24,6 +24,7 @@
             width: 300px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
         }
         .accordion-header {
             background-color: #000000;
@@ -42,32 +43,35 @@
         }
         .accordion-content {
             display: none;
-            padding: 15px;
+            padding: 30px;
             background-color: white;
-            width: 100%;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90vw;
+            max-width: 1200px;
             box-sizing: border-box;
         }
         .accordion-content p {
             text-align: justify;
             font-size: 16px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 1em;
             line-height: 1.6;
+            max-width: 1000px;
         }
         .active .accordion-content {
             display: block;
+            position: absolute;
+            z-index: 1;
         }
         .manifesto-quote {
             font-style: italic;
             padding: 20px;
             border-left: 4px solid #2c3e50;
-            margin: 20px 0;
+            margin: 20px auto;
             background-color: #f9f9f9;
             text-align: justify;
+            max-width: 1000px;
         }
         .quote-author {
             text-align: right;
@@ -79,8 +83,9 @@
             background-color: #f9f9f9;
             padding: 20px;
             border-radius: 5px;
-               margin-top: 15px;
-            text-align: center;
+            margin: 20px auto;
+            text-align: justify;
+            max-width: 1000px;
         }
         .session-info {
             list-style: none;
@@ -108,6 +113,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
         img {
             max-width: 200px;
@@ -126,8 +132,9 @@
                 width: 90%;
             }
             .accordion-content {
-                width: 90%;
-                padding: 10px;
+                width: 100%;
+                padding: 15px;
+                font-size: 14px;
             }
             .accordion-content p {
                 font-size: 14px;
@@ -171,7 +178,7 @@
 
                         <p>La felicidad del hombre moderno consiste en "divertirse". Divertirse significa la satisfacción de consumir y asimilar artículos, espectáculos, comidas, bebidas, cigarrillos, gente, conferencias, libros, películas; todo se consume, se traga. (...) todos succionamos, los eternamente expectantes, los esperanzados y los eternamente desilusionados. Nuestro carácter está equipado para intercambiar y recibir, para traficar y consumir; todo, tanto los objetos materiales, como los espirituales, se convierten en objeto de intercambio y de consumo.</p>
 
-                        <p>La situación en lo que atañe al amor corresponde, inevitablemente, al carácter social del hombre moderno. Los autómatas no pueden amar, pueden intercambiar su "bagaje de personalidad" y confiar en que la transacción sea equitativa. Una de las expresiones más significativas del amor, y en especial dl del matrimonio con esa estructura enajenada, es la idea del "equipo". En innumerables artículos sobre el matrimonio feliz, el ideal descrito es el de un equipo que funciona sin dificultades. Tal descripción no difiere demasiado de la idea de un empleado que trabaja sin inconvenientes; debe ser "razonablemente independiente", cooperativo, tolerante, y al mismo tiempo ambicioso y agresivo."</p>
+                        <p>La situación en lo que atañe al amor corresponde, inevitablemente, al carácter social del hombre moderno. Los autómatas no pueden amar, pueden intercambiar su "bagaje de personalidad" y confiar en que la transacción sea equitativa. Una de las expresiones más significativas del amor, y en especial del matrimonio con esa estructura enajenada, es la idea del "equipo". En innumerables artículos sobre el matrimonio feliz, el ideal descrito es el de un equipo que funciona sin dificultades. Tal descripción no difiere demasiado de la idea de un empleado que trabaja sin inconvenientes; debe ser "razonablemente independiente", cooperativo, tolerante, y al mismo tiempo ambicioso y agresivo."</p>
 
                         <div class="quote-author">— Erich Fromm, <cite>El Arte de Amar</cite>, 1956</div>
                     </div>
@@ -221,7 +228,7 @@
                 <div class="accordion-header">CONTACTO</div>
                 <div class="accordion-content">
                     <div class="contact-info">
-                        <p><a href="mailto:espaciosinestesia@gmail.com">espaciosinestessia@gmail.com</a></p>
+                        <p><a href="mailto:espaciosinestesia@gmail.com">espaciosinestesia@gmail.com</a></p>
                     </div>
                 </div>
             </div>
