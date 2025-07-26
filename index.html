@@ -52,6 +52,7 @@
             width: 90vw;
             max-width: 1200px;
             box-sizing: border-box;
+            margin-bottom: 10px;
         }
         .accordion-content p {
             text-align: justify;
@@ -107,7 +108,7 @@
             color: #2c3e50;
             text-decoration: none;
             font-size: 1.1em;
-            margin: 0 auto;
+            transform: translateX(-20px);
         }
         .contact-info a:hover {
             text-decoration: underline;
@@ -169,7 +170,7 @@
             <div class="accordion-item">
                 <div class="accordion-header">¿QUÉ ES SINESTESIA?</div>
                 <div class="accordion-content">
-                    <div style="width: 100%; max-width: 1000px; margin: 0 auto;">
+                    <div st style="width: 100%; max-width: 1000px; margin: 0 auto;">
                         <p>Sinestesia no es todavía nada más que una idea y un deseo de crear una comunidad de personas que comparta libros, escritura, conocimientos, inquietudes, reflexiones, indignaciones, arte, experiencias, y cualquier intercambio natural entre seres humanos como puede ser cambiar una mesa de madera maciza por el diseño de una página web.</p>
 
                         <p>Últimamente resulta más fácil imaginar el fin del mundo que el fin de las guerras, del capitalismo, de la tecnología, del egoísmo, del narcisismo, de la maldad, de Trump, de Elon Musk, de Putin, de Israel, de Rusia, de los incels, de Vox… Parece que todo está perdido, que todo está inventado, que todo está pensado y que solo nos queda montarnos a este tren a toda velocidad y vivir anestesiados. Cada vez más gente fantasea con irse al campo, el nuevo éxodo. Pero no puede ser la única solución. Abandonar la civilización significa rendirse, asumir que nunca vamos a volver a ser seres civilizados.</p>
@@ -180,14 +181,14 @@
 
                         <p>No se trata de que esto sea una carga, de que haya que estudiar en casa para hacerse el inteligente en este espacio. Podemos combinar la lectura con la escritura y leer los textos en voz alta. A quien le apetezca. Quien no, que solo escuche. No es un concurso, ni es un club de listos, ni de cultos ni de eruditos. Todo el mundo es bienvenido.</p>
 
-                        <p>Poco a poco, se pueden integrar otras actividades en función de la gente que vaya viniendo. Si alguien es filosófo o biólogo y quiere darnos una masterclass de algún tema concreto, seguro que será interesante. Todo esto es una fantasía muy grande. De momento empecemos de forma sencilla y veremos en que se convierte. Iremos guiando las sesiones hasta que la gente se suelte y quiera proponer cosas. Cualquier ayuda y propuesta es bienvenida desde ya.</p>
+                        <p>Poco a poco, se pueden integrar otras actividades en función de la gente que vaya viniendo. Si alguien es filosófo o biólogo y quiere darnos una masterclass de algún tema concreto, seguro que será interesante. Todo esto es una fantasía muy grande. De momento empecemos de fo forma sencilla y veremos en que se convierte. Iremos guiando las sesiones hasta que la gente se suelte y quiera proponer cosas. Cualquier ayuda y propuesta es bienvenida desde ya.</p>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <div class="accordion-header">MANIFIESTO</div>
                 <div class="accordion-content">
-                    <div class="manifesto-quote" style="width: 100%; max-width: 1000px; margin: 0 auto;">
+                    <div class=ss="manifesto-quote" style="width: 100%; max-width: 1000px; margin: 0 auto;">
                         <p>"El capitalismo moderno necesita hombres que cooperen mansamente y en gran número; que quieran consumir cada vez más; y cuyos gustos estén estandarizados y puedan modificarse y anticiparse fácilmente. Necesita hombres que se sientan libres e independientes, no sometidos a ninguna autoridad, principio o conciencia moral, dispuestos, empero, a que los manejen, a hacer lo que se espera de ellos, a encajar sin dificultades en la maquinaria social (...)</p>
 
                         <p>El hombre moderno está enajenado de sí mismo, de sus semejantes y de la naturaleza. Se ha transformado en un artículo, experimenta sus fuerzas vitales como una inversión que debe producirle el máximo de beneficios posible en las condiciones imperantes en el mercado. Las relaciones humanas son esencialmente las de autómatas enajenados, en las que cada uno basa su seguridad en mantenerse cerca del rebaño y en no diferir en el pensamiento, el sentimiento o la acción. Al mismo tiempo que todos tratan de estar tan cerca de los demás como sea posible, todos permanecen tremendamente solos, invadidos por el profundo sentimiento o la acción. (...)</p>
@@ -235,7 +236,7 @@
                             <ul class="session-info">
                                 <li><strong>Fecha:</strong> sábado 20 de septiembre</li>
                                 <li><strong>Hora:</strong> 12:00</li>
-                                <li><strong>Lugar:</strong> por determinar en función del núm. de personas (Madrid Centro)</li>
+                                <li><strong>Lugar:</strong> por determinar en función del núm. de personas (Madrid Centrotro)</li>
                                 <li><strong>Libro:</strong> El Arte de Amar (Erich Fromm)</li>
                             </ul>
 
@@ -266,29 +267,29 @@
             button.addEventListener('click', () => {
                 const accordionItem = button.parentElement;
                 
-                // Cerrar todos los elementos abiertos
-                document.querySelectorAll('.accordion-item').forEach(item => {
-                    if (item !== accordionItem) {
-                        item.classList.remove('active');
-                    }
-                });
-
-                // Alternar el estado del elemento actual
+                // Solo alternar el estado del elemento actual
                 accordionItem.classList.toggle('active');
 
-                // Ajustar el espacio después del elemento activo
-                const allItems = document.querySelectorAll('.accordion-item');
-                allItems.forEach((item, index) => {
-                    if (item === accordionItem && item.classList.contains('active')) {
-                        const contentHeight = item.querySelector('.accordion-content').scrollHeight;
-                        const nextItems = Array.from(allItems).slice(index + 1);
-                        nextItems.forEach(nextItem => {
-                            nextItem.style.marginTop = `${contentHeight + 20}px`;
-                        });
-                    } else if (!document.querySelector('.accordion-item.active')) {
-                        item.style.marginTop = '3px';
+                // Ajustar espacios
+                let totalHeight = 0;
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    if (item.classList.contains('active')) {
+                        const content = item.querySelector('.accordion-content');
+                        totalHeight += content.scrollHeight + 20;
                     }
                 });
+
+                // Mover los siguientes elementos
+                const allItems = Array.from(document.querySelectorAll('.accordion-item'));
+                const currentIndex = allItems.indexOf(accordionItem);
+                
+                for (let i = currentIndex + 1; i < allItems.length; i++) {
+                    const previousActiveItems = allItems.slice(0, i).filter(item => item.classList.contains('active'));
+                    const totalPreviousHeight = previousActiveItems.reduce((sum, item) => {
+                        return sum + item.querySelector('.accordion-content').scrollHeight;
+                    }, 0);
+                    allItems[i].style.marginTop = previousActiveItems.length ? `${20}px` : '3px';
+                }
             });
         });
     </script>
